@@ -9,6 +9,6 @@ router.route('/').get((req, res) => {
 });
 
 router.use('/user', user);
-
+router.use('/auth',require('./auth'));
 
 module.exports = router;

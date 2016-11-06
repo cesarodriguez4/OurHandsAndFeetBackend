@@ -5,11 +5,20 @@ const bodyParser = require('body-parser');
 const morgan     = require('morgan');
 const bluebird   = require('bluebird');
 
+
+
 const config = require('./config');
 const routes = require('./routes');
 
 const app  = express();
 
+app.use(function(req, res, next){
+  res.setHeader("Access-Control-Allow-Origin", "http://localhost:9000");
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+  res.setHeader('Access-Control-Allow-Credentials', true);
+  next();
+})
 mongoose.Promise = bluebird;
 mongoose.connect(config.mongo.url);
 
