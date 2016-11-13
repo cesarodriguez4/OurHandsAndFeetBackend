@@ -27,7 +27,6 @@ app.use(function(req, res, next){
 })
 mongoose.Promise = bluebird;
 mongoose.connect(process.env.MONGO_DB_URI);
-
 app.use(helmet());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
