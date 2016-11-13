@@ -3,8 +3,7 @@ const router = new Router();
 const user  = require('./model/user/user-router');
 
 function authenticate(req, res, next){
-    console.log(req);
-    if(req.headers.origin == "http://localhost:9000"){
+    if(req.headers.origin == process.env.AllowUrl){
       next();
     }else{
       res.redirect("/");
