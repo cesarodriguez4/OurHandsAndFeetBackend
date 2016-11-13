@@ -16,7 +16,7 @@ exports.authenticate = function (req, res) {
     client_id: req.body.clientId,
 //TODO: if dev use local .env file
 //TODO: if hosted in heroku use GoogleClientSecret
-    client_secret: "QsU6T71_8u8RSX6B25uYCunO",
+    client_secret: process.env.GoogleClientSecret,
     redirect_uri: req.body.redirectUri,
     grant_type: 'authorization_code'
   };
