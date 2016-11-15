@@ -13,7 +13,7 @@ function authenticate(req, res, next){
 
 
 router.route('/').get((req, res) => {
-  res.json({ message: 'Welcome to tipsy-ryde-backend API!' });
+  res.json({ message: 'Welcome to Our Hands and Feet API!' });
 });
 router.all("/*", authenticate, function(req, res, next){
   next();

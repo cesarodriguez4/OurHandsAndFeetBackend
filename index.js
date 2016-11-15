@@ -8,6 +8,7 @@ const bluebird   = require('bluebird');
 const dotenv     = require('dotenv');
 const config = require('./config');
 const routes = require('./routes');
+var cors = require('cors');
 
 //TODO: Figure out why process.env.NODE_ENV is undefined at start
 dotenv.config();
@@ -31,6 +32,8 @@ app.use(helmet());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(morgan('tiny'));
+if(process.env.NODE_ENV === 'prod'){
+  app.use(cors());}
 app.use('/', routes);
 
 app.listen(config.server.port, () => {
