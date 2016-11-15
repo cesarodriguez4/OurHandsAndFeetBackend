@@ -17,23 +17,26 @@ if(process.env.NODE_ENV === 'dev' || process.env.NODE_ENV === undefined){
   console.log("MONGO DB URI is: " + process.env.MONGO_DB_URI)
 };
 
+console.log("allowUrl " + process.env.AllowUrl);
+
 const app  = express();
 
 app.use(function(req, res, next){
   res.setHeader("Access-Control-Allow-Origin", process.env.AllowUrl);
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
   res.setHeader('Access-Control-Allow-Credentials', true);
   next();
 })
 mongoose.Promise = bluebird;
 mongoose.connect(process.env.MONGO_DB_URI);
+
 app.use(helmet());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(morgan('tiny'));
-if(process.env.NODE_ENV === 'prod'){
-  app.use(cors());}
+// if(process.env.NODE_ENV === 'prod'){
+//   app.use(cors());}
 app.use('/', routes);
 
 app.listen(config.server.port, () => {
