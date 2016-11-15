@@ -25,16 +25,17 @@ if(process.env.NODE_ENV === 'dev' || process.env.NODE_ENV === undefined){
 console.log("allowUrl " + process.env.AllowUrl);
 
 const app  = express();
-app.use(cors(corsOptions));
+
 
 app.use(function(req, res, next){
+  //cors(corsOptions);
 //   res.setHeader("Access-Control-Allow-Origin", "*");
 //   // res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
 //   res.setHeader('Access-Control-Allow-Headers', "Origin, X-Requested-With, Content-Type, Accept");
 res.setHeader('Access-Control-Allow-Credentials', true);
 next();
 })
-
+app.use(cors(corsOptions));
 mongoose.Promise = bluebird;
 mongoose.connect(process.env.MONGO_DB_URI);
 
