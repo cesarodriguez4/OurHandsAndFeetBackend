@@ -13,6 +13,11 @@ var cors = require('cors');
 //TODO: Figure out why process.env.NODE_ENV is undefined at start
 dotenv.config();
 
+var corsOptions = {
+  origin: process.env.AllowUrl,
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+};
+
 if(process.env.NODE_ENV === 'dev' || process.env.NODE_ENV === undefined){
   console.log("MONGO DB URI is: " + process.env.MONGO_DB_URI)
 };
@@ -22,9 +27,9 @@ console.log("allowUrl " + process.env.AllowUrl);
 const app  = express();
 
 app.use(function(req, res, next){
-  res.setHeader("Access-Control-Allow-Origin", process.env.AllowUrl);
+  res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
+  res.setHeader('Access-Control-Allow-Headers', "Origin, X-Requested-With, Content-Type, Accept");
   res.setHeader('Access-Control-Allow-Credentials', true);
   next();
 })
@@ -35,8 +40,8 @@ app.use(helmet());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(morgan('tiny'));
-// if(process.env.NODE_ENV === 'prod'){
-//   app.use(cors());}
+
+app.use(cors(corsOptions));
 app.use('/', routes);
 
 app.listen(config.server.port, () => {
