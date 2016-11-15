@@ -25,6 +25,7 @@ if(process.env.NODE_ENV === 'dev' || process.env.NODE_ENV === undefined){
 console.log("allowUrl " + process.env.AllowUrl);
 
 const app  = express();
+app.use(cors(corsOptions));
 
 app.use(function(req, res, next){
 //   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -42,7 +43,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(morgan('tiny'));
 
-app.use(cors(corsOptions));
 app.use('/', routes);
 
 app.listen(config.server.port, () => {
