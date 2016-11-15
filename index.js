@@ -13,10 +13,17 @@ var cors = require('cors');
 //TODO: Figure out why process.env.NODE_ENV is undefined at start
 dotenv.config();
 
-var corsOptions = {
-  origin: process.env.AllowUrl,
+if(process.env.NODE_ENV === 'prod'){
+var corsOptions =
+  {origin: 'http://www.ourhandsandfeet.org',
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-};
+}};
+
+if(process.env.NODE_ENV === 'dev' || process.env.NODE_ENV === undefined){
+var corsOptions =
+  {origin: process.env.AllowUrl,
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}};
 
 if(process.env.NODE_ENV === 'dev' || process.env.NODE_ENV === undefined){
   console.log("MONGO DB URI is: " + process.env.MONGO_DB_URI)
