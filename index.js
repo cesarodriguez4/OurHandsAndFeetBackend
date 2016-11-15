@@ -13,17 +13,14 @@ var cors = require('cors');
 //TODO: Figure out why process.env.NODE_ENV is undefined at start
 dotenv.config();
 
-if(process.env.NODE_ENV === 'prod'){
-var corsOptions =
-  {origin: 'http://www.ourhandsandfeet.org',
-  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-}};
 
-if(process.env.NODE_ENV === 'dev' || process.env.NODE_ENV === undefined){
 var corsOptions =
   {origin: process.env.AllowUrl,
+    credentials: true,
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-}};
+};
+
+
 
 if(process.env.NODE_ENV === 'dev' || process.env.NODE_ENV === undefined){
   console.log("MONGO DB URI is: " + process.env.MONGO_DB_URI)
@@ -34,14 +31,15 @@ console.log("allowUrl " + process.env.AllowUrl);
 const app  = express();
 
 
-app.use(function(req, res, next){
-  //cors(corsOptions);
-//   res.setHeader("Access-Control-Allow-Origin", "*");
-//   // res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-//   res.setHeader('Access-Control-Allow-Headers', "Origin, X-Requested-With, Content-Type, Accept");
-res.setHeader('Access-Control-Allow-Credentials', true);
-next();
-})
+// app.use(function(req, res, next){
+//   //cors(corsOptions);
+// //   res.setHeader("Access-Control-Allow-Origin", "*");
+// //   // res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+// //   res.setHeader('Access-Control-Allow-Headers', "Origin, X-Requested-With, Content-Type, Accept");
+// res.setHeader('Access-Control-Allow-Credentials', true);
+// next();
+// })
+
 app.use(cors(corsOptions));
 mongoose.Promise = bluebird;
 mongoose.connect(process.env.MONGO_DB_URI);
