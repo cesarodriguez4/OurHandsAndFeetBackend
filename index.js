@@ -8,13 +8,13 @@ const bluebird   = require('bluebird');
 const dotenv     = require('dotenv');
 const config = require('./config');
 const routes = require('./routes');
-var cors = require('cors');
+const cors = require('cors');
 
 //TODO: Figure out why process.env.NODE_ENV is undefined at start
 dotenv.config();
 
 
-var corsOptions =
+const corsOptions =
   {origin: process.env.AllowUrl,
     credentials: true,
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
@@ -25,8 +25,6 @@ var corsOptions =
 if(process.env.NODE_ENV === 'dev' || process.env.NODE_ENV === undefined){
   console.log("MONGO DB URI is: " + process.env.MONGO_DB_URI)
 };
-
-console.log("allowUrl " + process.env.AllowUrl);
 
 const app  = express();
 
