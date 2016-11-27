@@ -5,10 +5,11 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js",
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "istanbul cover ./node_modules/.bin/_mocha test/**/*.js --coverage "
   },
   "engines": {
-    "node": "7.1.0",
+    "node": "7.2.0",
     "npm": "3.10.9"
   },
   "author": "tipsyryders <>",
@@ -27,12 +28,17 @@
     "request": "^2.78.0"
   },
   "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-as-promised": "^6.0.0",
+    "chai-http": "^3.0.0",
     "dotenv": "^2.0.0",
     "eslint": "^3.2.2",
     "eslint-config-airbnb": "^10.0.0",
     "eslint-plugin-import": "^1.12.0",
     "eslint-plugin-jsx-a11y": "^2.0.1",
     "eslint-plugin-react": "^6.0.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.1.2",
     "nodemon": "^1.9.2"
   }
 }

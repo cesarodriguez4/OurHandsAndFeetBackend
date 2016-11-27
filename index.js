@@ -20,12 +20,14 @@ const corsOptions =
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 
-//TODO: This comment also needs to be removed
 
-
-if(process.env.NODE_ENV === 'dev' || process.env.NODE_ENV === undefined){
-  console.log("MONGO DB URI is: " + process.env.MONGO_DB_URI)
-};
+// if(process.env.NODE_ENV === 'dev' || process.env.NODE_ENV === undefined){
+//   console.log("MONGO DB URI is: " + process.env.MONGO_DB_URI)
+// };
+//
+// if(process.env.NODE_ENV === 'test') {
+//   console.log("MONGO DB URI is: " + process.env.MONGO_DB_URI)
+// };
 
 const app  = express();
 
