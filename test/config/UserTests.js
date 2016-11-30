@@ -4,8 +4,8 @@
 var chai = require("chai");
 var chaiHttp = require('chai-http');
 process.env.NODE_ENV = "dev";
-//var sinon = require("sinon");
-//var sinonChai = require("sinon-chai");
+var sinon = require("sinon");
+var sinonChai = require("sinon-chai");
 var expect = chai.expect;
 var server = require("../../index.js");
 //TODO when implementing our own account creation, need to include encryption - use the crypto npm package
@@ -16,30 +16,67 @@ var user1 = require('../../model/user/user-schema.js');
 //var userService1 = require('../../routers.js');
 describe("functional test Create User", function () {
 
-  // before(function(done){
-  //   //user1.remove();
-  //   user1.collection.drop();
-  //   user1.ensureIndexes(function(){
-  //
-  //     done();
-  //   });
-  //
-  //   //done();
-  // });
+  before(function(done){
+    //user1.remove();
+    user1.collection.drop();
+    user1.ensureIndexes(function(){
+
+      done();
+    });
+
+    //done();
+  });
 
     it("should create a new user", function (done) {
       chai.request(server)
       .post('/user')
       .send({"name":"foo","email":"foo@bar.com"})
+
+      //TODO why is this user not being created in the database?!
+
       .end(function(err, res){
         //  console.log(res.body);
           expect(res).to.have.status(200);
+
+          //TODO expect that this user is actually in the database, perform a get request with the result being foo@bar.com email
+
           done();
       //  chai.request(server).post("/api/user/delete").send("foo@bar.com").end(function(err, res){
       //      expect(res).to.have.status(200);
       //  });;
       //  done();
-      })
+    });
+  });
+
+//TODO The following is not being covered in the user-router.js
+//router.route('/')
+  //.get((...args) => controller.find(...args))
+  //.post((...args) => controller.create(...args));
+
+
+    it("should find the user that was just created in the database", function (done) {
+
+      emailOfUser = User1.findOne({ email: "foo@bar.com" }
+        // .end(function(err, res){
+        //   //  console.log(res.body);
+        //     expect(res).to.have.status(200);
+        expect(emailOfUser).to.equal.("foo@bar.com");
+
+            //TODO expect that this user is actually in the database, perform a get request with the result being foo@bar.com email
+
+            done();
+
+          // });
+        });
+
+    it("should not create a new user if the user already exists", function (done) {
+
+//TODO post again the same user and it should not create a duplicate user, resceive a response 400
+      //TODO expect that the database only contains a single user
+    });
+
+
+
     });
   //   it("should return 400 - duplicate user", function (done) {
   //     chai.request(server)
