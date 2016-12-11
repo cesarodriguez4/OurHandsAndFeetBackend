@@ -8,10 +8,12 @@
     "start": "node index.js",
     "test": "istanbul cover ./node_modules/.bin/_mocha test/**/*.js --coverage "
   },
+
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/UltimatePromotions/OurHandsAndFeetBackend.git"
   },
+
   "license": "MIT",
   "author": "tipsyryders <>",
   "contributors": [
@@ -22,6 +24,7 @@
       "name": ""
     }
   ],
+
   "engines": {
     "node": "7.2.0",
     "npm": "3.10.9"

@@ -8,7 +8,7 @@ exports.createJWT = function(user){
         iat: moment().unix(),
         exp: moment().add(14, 'days').unix()
     };
-    return jwt.encode(payload, "A hard to guess string");
+    return jwt.encode(payload, process.env.HashString);
 }
 
 exports.handleError = function (res, err) {
@@ -24,7 +24,7 @@ exports.ensureAuthenticated = function(req, res, next) {
 
   var payload = null;
   try {
-    payload = jwt.decode(token, "A hard to guess string");
+    payload = jwt.decode(token, process.env.HashString);
   }
   catch (err) {
     return res.status(401).send({ message: err.message });

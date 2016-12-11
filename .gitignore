@@ -45,3 +45,4 @@ jspm_packages
 
 # Environment file
 .env
+yarn.lock
