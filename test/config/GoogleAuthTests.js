@@ -16,38 +16,51 @@ var server = require("../../index.js");
 chai.use(chaiHttp);
 
 var user1 = require('../../model/user/user-schema.js');
+var authUtils = require('../../auth/authUtils');
 //var userService1 = require('../../routers.js');
 describe("functional test for the Google Auth service", function () {
+  // before(function(done){
+  //   //user1.remove();
+  //   user1.collection.drop();
+  //   user1.ensureIndexes(function(){
+  //
+  //     done();
+  //   });
 
-    it("should post the client secret", function (done) {
-      chai.request(server)
-      .post('/auth')
-      .send({"name":"foo","email":"foo@bar.com"})
+    //done();
+  //});
 
 
-      .end(function(err, res){
-        //  console.log(res.body);
-          expect(res).to.have.status(200);
+    // it("should post the client secret", function (done) {
+    //   chai.request(server)
+    //   .post('/auth')
+    //   .send({"name":"foo","email":"foo@bar.com"})
+    //
+    //
+    //   .end(function(err, res){
+    //     //  console.log(res.body);
+    //       expect(res).to.have.status(200);
+    //
+    //       done();
+    //   //  chai.request(server).post("/api/user/delete").send("foo@bar.com").end(function(err, res){
+    //   //      expect(res).to.have.status(200);
+    //   //  });;
+    //   //  done();
+    //       });
+    // });
+    //
+    // it("should process the google auth key", function (done) {
+    //
+    //   // chai.request(server)
+    //   // .end(function(err, res){
+    //   //   //  console.log(res.body);
+    //   //     expect(res).to.have.status(200);
+    //
+    //       done();
+    //
+    //   // });
+    // });
 
-          done();
-      //  chai.request(server).post("/api/user/delete").send("foo@bar.com").end(function(err, res){
-      //      expect(res).to.have.status(200);
-      //  });;
-      //  done();
-          });
-    });
-
-    it("should process the google auth key", function (done) {
-
-      // chai.request(server)
-      // .end(function(err, res){
-      //   //  console.log(res.body);
-      //     expect(res).to.have.status(200);
-
-          done();
-
-      // });
-    });
 
 });
 //chai.use(sinonChai);
