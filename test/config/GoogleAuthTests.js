@@ -16,7 +16,6 @@ var server = require("../../index.js");
 chai.use(chaiHttp);
 
 var user1 = require('../../model/user/user-schema.js');
-var authUtils = require('../../auth/authUtils');
 //var userService1 = require('../../routers.js');
 describe("functional test for the Google Auth service", function () {
   // before(function(done){
