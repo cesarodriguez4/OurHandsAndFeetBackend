@@ -7,7 +7,7 @@ const authUtils = require('./authUtils');
 exports.authenticate = function (req, res) {
   const accessTokenUrl = 'https://accounts.google.com/o/oauth2/token';
   const peopleApiUrl = 'https://www.googleapis.com/plus/v1/people/me/openIdConnect';
-
+  console.log(req);
   const params = {
     code: req.body.code,
     client_id: req.body.clientId,

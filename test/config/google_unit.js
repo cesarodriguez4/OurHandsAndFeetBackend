@@ -1,25 +1,38 @@
-'use strict';
 const google = require('../../auth/google');
 const chai = require('chai');
 const sinon = require('sinon');
+const assert = require('assert');
 const sinonChai = require('sinon-chai');
 const expect = chai.expect;
 chai.use(sinonChai);
 
-describe('The Google Module', function () {
+var server;
 
-  const server = sinon.fakeServer.create();
-  it("should authenticate", function () {
+describe("The Google Module", function () {
 
-    google.authenticate();
-
-    function hello(name, cb) {
-        cb("hello " + name);
-      }
-          var cb = sinon.spy();
-
-          hello("foo", cb);
-
-          expect(cb).to.have.been.calledWith("hello boo");
-      });
+  before(function () {
+    server = sinon.fakeServer.create();
   });
+
+  after(function () {
+    server.restore();
+  });
+
+  it("should authenticate", function () {
+//the spy needs a request body code variable
+    var callback = sinon.spy();
+
+    google.authenticate(callback);
+
+    if(server.requests.length){
+      server.requests[0].respond(
+            200,
+            { "Content-Type": "application/json" },
+            JSON.stringify([{ done: true }])
+        );
+    }
+
+      assert(callback.calledOnce);
+  });
+
+});
