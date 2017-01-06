@@ -1,5 +1,5 @@
 # Our Hands And Feet Back end
-[![CircleCI](https://circleci.com/gh/UltimatePromotions/ourhandsandfeetbackend.svg?style=svg)](https://circleci.com/gh/UltimatePromotions/ourhandsandfeetbackend)
+[![CircleCI](https://circleci.com/gh/UltimatePromotions/OurHandsAndFeetBackend.svg?style=svg)](https://circleci.com/gh/UltimatePromotions/OurHandsAndFeetBackend)
 
 #Install
 - npm install
