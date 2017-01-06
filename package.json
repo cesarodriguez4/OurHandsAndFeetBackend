@@ -8,12 +8,10 @@
     "start": "node index.js",
     "test": "istanbul cover ./node_modules/.bin/_mocha test/**/*.js --coverage --dir ./test/coverage"
   },
-
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/UltimatePromotions/OurHandsAndFeetBackend.git"
   },
-
   "license": "MIT",
   "author": "tipsyryders <>",
   "contributors": [
@@ -24,7 +22,6 @@
       "name": ""
     }
   ],
-
   "engines": {
     "node": "7.2.0",
     "npm": "3.10.9"
@@ -49,7 +46,7 @@
     "chai-http": "^3.0.0",
     "dotenv": "^2.0.0",
     "eslint": "^3.2.2",
-    "eslint-config-airbnb": "^10.0.0",
+    "eslint-config-airbnb": "^10.0.1",
     "eslint-plugin-import": "^1.12.0",
     "eslint-plugin-jsx-a11y": "^2.0.1",
     "eslint-plugin-react": "^6.0.0",
@@ -58,5 +55,5 @@
     "nodemon": "^1.9.2",
     "sinon": "^1.17.6",
     "sinon-chai": "^2.8.0"
-      }
+  }
 }
