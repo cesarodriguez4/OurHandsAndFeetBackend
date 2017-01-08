@@ -1,9 +1,4 @@
-const chai = require('chai');
-const chaiHttp = require('chai-http');
-process.env.NODE_ENV = 'dev';
-const expect = chai.expect;
-const server = require('../../index');
-chai.use(chaiHttp);
+
 
 const user1 = require('../../model/user/user-schema');
 const authUtils = require('../../auth/authUtils');
