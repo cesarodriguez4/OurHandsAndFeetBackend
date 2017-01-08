@@ -1,10 +1,4 @@
 const google = require('../../auth/google');
-const chai = require('chai');
-const sinon = require('sinon');
-const assert = require('assert');
-const sinonChai = require('sinon-chai');
-const expect = chai.expect;
-chai.use(sinonChai);
 
 var server;
 
