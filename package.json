@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "nodemon index.js",
     "start": "node index.js",
-    "test": "istanbul cover ./node_modules/.bin/_mocha -r test/bootstrap.js test/**/*.js --coverage --dir ./test/coverage"
+    "debug": "node --inspect --debug-brk index.js",
+    "test": "istanbul  cover  ./node_modules/.bin/_mocha  -r ./test/bootstrap.js test/**/*.js  --coverage --dir ./test/coverage"
   },
   "repository": {
     "type": "git",
