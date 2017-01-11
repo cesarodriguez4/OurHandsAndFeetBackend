@@ -1,5 +1,6 @@
 global.chai = require('chai');
 global.chaiHttp = require('chai-http');
+global.sinon = require('sinon');
 process.env.NODE_ENV = 'dev';
 process.env.MONGO_DB_URI = 'localhost';
 global.expect = chai.expect;
@@ -14,4 +15,3 @@ before(function(done) {
         done();
     });
 });
-
