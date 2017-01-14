@@ -1,6 +1,6 @@
 const Router = require('express').Router;
 const router = new Router();
-const user  = require('./model/user/user-router');
+const user = require('./model/user/user-router');
 
 function authenticate(req, res, next) {
   if (req.headers.origin === process.env.AllowUrl) {
@@ -10,11 +10,10 @@ function authenticate(req, res, next) {
   }
 }
 
-
 router.route('/').get((req, res) => {
   res.json({ message: 'Welcome to Our Hands and Feet API!' });
 });
-router.all('/*', authenticate, function(req, res, next) {
+router.all('/*', authenticate, function (req, res, next) {
   next();
 });
 router.use('/user', user);
