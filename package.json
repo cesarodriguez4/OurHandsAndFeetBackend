@@ -14,7 +14,7 @@
     "url": "git+ssh://git@github.com/UltimatePromotions/OurHandsAndFeetBackend.git"
   },
   "license": "MIT",
-  "author": "tipsyryders <>",
+  "author": "HandlersAndKickers <>",
   "contributors": [
     {
       "name": ""
@@ -24,8 +24,8 @@
     }
   ],
   "engines": {
-    "node": "7.2.0",
-    "npm": "3.10.9"
+    "node": "7.4.0",
+    "npm": "4.0.5"
   },
   "dependencies": {
     "bluebird": "^3.4.1",
@@ -52,6 +52,9 @@
     "eslint-plugin-jsx-a11y": "^2.0.1",
     "eslint-plugin-react": "^6.0.0",
     "istanbul": "^0.4.5",
+    "jasmine": "^2.5.3",
+    "jasmine-debug": "^0.1.1",
+    "jasmine-node": "^1.14.5",
     "mocha": "^3.1.2",
     "mockgoose": "^6.0.8",
     "nodemon": "^1.9.2",
