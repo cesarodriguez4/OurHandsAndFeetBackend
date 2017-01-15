@@ -9,9 +9,7 @@ chai.use(chaiHttp);
 var mongoose = require('mongoose');
 var mockgoose = require('mockgoose');
 
-before(function(done) {
-    mockgoose(mongoose).then(function() {
-        global.server = require('../index');
-        done();
-    });
+mockgoose(mongoose).then(function() {
+    global.server = require('../index');
+    done();
 });
