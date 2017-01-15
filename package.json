@@ -8,7 +8,7 @@
     "start": "node index.js",
     "debug": "node --inspect --debug-brk index.js",
     "test": "istanbul  cover  ./node_modules/.bin/_mocha  -r ./test/bootstrap.js test/**/*.js  --coverage --dir ./coverage",
-    "test:debug": "./node_modules/.bin/mocha --watch --inspect --debug-brk -r ./test/bootstrap.js test/**/*.js"
+    "test:debug": "./node_modules/.bin/mocha --inspect --debug-brk -r ./test/bootstrap.js test/**/*.js"
   },
   "repository": {
     "type": "git",
