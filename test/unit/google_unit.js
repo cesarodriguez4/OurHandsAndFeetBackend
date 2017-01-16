@@ -5,7 +5,7 @@ const google = rewire('../../auth/google');
 const accessTokenUrl = google.__get__('accessTokenUrl')
 const peopleApiUrl = google.__get__('peopleApiUrl')
 
-describe.only('The Unit Test for Google Module', () => {
+describe('The Unit Test for Google Module', () => {
   let
     User,
     request,
