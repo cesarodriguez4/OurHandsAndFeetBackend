@@ -1,12 +1,13 @@
-const User = require('../model/user/user-schema');
+var User = require('../model/user/user-schema');
 //const config = require('../config');
-const request = require('request');
+var request = require('request');
 //const jwt = require('jwt-simple');
-const authUtils = require('./authUtils');
+var authUtils = require('./authUtils');
+
+const accessTokenUrl = 'https://accounts.google.com/o/oauth2/token';
+const peopleApiUrl = 'https://www.googleapis.com/plus/v1/people/me/openIdConnect';
 
 exports.authenticate = function (req, res) {
-  const accessTokenUrl = 'https://accounts.google.com/o/oauth2/token';
-  const peopleApiUrl = 'https://www.googleapis.com/plus/v1/people/me/openIdConnect';
   console.log(req);
   const params = {
     code: req.body.code,
