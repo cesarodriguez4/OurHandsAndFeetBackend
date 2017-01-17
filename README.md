@@ -3,7 +3,8 @@
 
 #Install
 - npm install
-- Request a copy of the .env file, which includes credentials to development mLab
+- Request a copy of the .env file, which includes credentials to development mLab and to connect to the Google Auth Service<br><br>
+<i>Note</i> there is an <b>example.env</b> file for you to use. Copy it, paste it as <b>.env</b>, then request the missing credentials from Josh Sherman.
 
 #Run the server
 <b>npm start</b> starts the express server at localhost:7000<br>
