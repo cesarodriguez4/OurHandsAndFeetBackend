@@ -6,7 +6,7 @@
 - Request a copy of the .env file, which includes credentials to development mLab
 
 #Run the server
-<b>npm start<b> starts the express server at localhost:7000<br>
+<b>npm start</b> starts the express server at localhost:7000<br>
 <br>
 <b>npm run debug</b> also starts the node debugger, which allows you to use Chrome browser to debug. You should also install the NIM add-on to Chrome and set it to automatic mode.
 

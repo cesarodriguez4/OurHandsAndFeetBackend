@@ -22,14 +22,14 @@ describe('functional test Create User', function () {
       });
     });
 
-    it("should test jwt create", function(done) {
-        const User = new user1();
-        User.name = "foo";
-          User.email = "foo@bur.com";
-          User.save(function(err) {
-          const token = authUtils.createJWT(User);
-            expect(token).to.not.be.null;
-            done();
-          });
-    });
+    // it("should test jwt create", function(done) {
+    //     const User = new user1();
+    //     User.name = "foo";
+    //       User.email = "foo@bur.com";
+    //       User.save(function(err) {
+    //       const token = authUtils.createJWT(User);
+    //         expect(token).to.not.be.null;
+    //         done();
+    //       });
+    //});
 });
