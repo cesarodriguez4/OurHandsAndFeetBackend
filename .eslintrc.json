@@ -22,6 +22,8 @@
     "no-continue": 0,
     "import/no-extraneous-dependencies": 0,
     "import/newline-after-import": 0,
-    "no-mixed-operators": 0
+    "no-mixed-operators": 0,
+    "no-undef": 0,
+    "prefer-template": 0
   }
 }

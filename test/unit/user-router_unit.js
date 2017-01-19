@@ -9,7 +9,7 @@ describe('functional test Create User', () => {
   });
 // TODO:https://github.com/UltimatePromotions/ourhandsandfeet/issues/41
   it('should get the new user by id', (done) => {
-    const User = new User2();
+    let User = new User2();
     User.name = 'foo2';
     User.email = 'foo2@bar.com';
     User.save((err) => {
@@ -25,13 +25,14 @@ describe('functional test Create User', () => {
   });
 
     it('should update the new user by id', (done) => {
-      const User = new User2();
+      let User = new User2();
       User.name = 'foo2';
       User.email = 'foo2@bar.com';
       User.save((err) => {
         const Uid = User._id;
         chai.request(server)
-        .post('/user/' + Uid)
+        .put('/user/' + Uid)
+        .send({ userType: 'coolGuy' })
         .end((err, res) => {
           expect(res).to.have.status(200);
             // expect(res.body).to.have.lengthOf(1);
