@@ -4,11 +4,11 @@ const user  = require('./model/user/user-router');
 const book = require('./model/book/book-router');
 
 function authenticate(req, res, next) {
-  // if (req.headers.origin === process.env.AllowUrl) {
+  if (req.headers.origin === process.env.AllowUrl) {
     next();
-  // } else {
-    // res.redirect('/');
-  // }
+  } else {
+    res.redirect('/');
+  }
 }
 
 
