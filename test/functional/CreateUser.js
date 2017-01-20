@@ -1,35 +1,22 @@
 
-
-const user1 = require('../../model/user/user-schema');
-const authUtils = require('../../auth/authUtils');
-describe('functional test Create User', function () {
-  before(function(done){
-    user1.collection.drop();
-    user1.ensureIndexes(function(){
+const User1 = require('../../model/user/user-schema');
+// const authUtils = require('../../auth/authUtils');
+describe('functional test Create User',  () => {
+  before((done) => {
+    User1.collection.drop();
+    User1.ensureIndexes(() => {
       done();
     });
   });
 
-    it('should create a new user', function (done) {
-      const User = new user1();
+    it('should create a new user', (done) => {
+      const User = new User1();
       User.name = 'foo';
       User.email = 'foo@bar.com';
-      User.save(function(err) {
+      User.save((err) => {
         const id = User._id;
-        //console.log(User._id);
         expect(id).to.not.be.null;
         done();
       });
     });
-
-    // it("should test jwt create", function(done) {
-    //     const User = new user1();
-    //     User.name = "foo";
-    //       User.email = "foo@bur.com";
-    //       User.save(function(err) {
-    //       const token = authUtils.createJWT(User);
-    //         expect(token).to.not.be.null;
-    //         done();
-    //       });
-    //});
 });

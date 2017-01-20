@@ -14,7 +14,7 @@ function authenticate(req, res, next) {
 router.route('/').get((req, res) => {
   res.json({ message: 'Welcome to Our Hands and Feet API!' });
 });
-router.all('/*', authenticate, function(req, res, next) {
+router.all('/*', authenticate, (req, res, next) => {
   next();
 });
 router.use('/user', user);

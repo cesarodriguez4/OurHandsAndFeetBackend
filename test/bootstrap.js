@@ -6,10 +6,10 @@ process.env.MONGO_DB_URI = 'localhost';
 global.expect = chai.expect;
 chai.use(chaiHttp);
 
-var mongoose = require('mongoose');
-var mockgoose = require('mockgoose');
+const mongoose = require('mongoose');
+const mockgoose = require('mockgoose');
 
-mockgoose(mongoose).then(function() {
+mockgoose(mongoose).then(() => {
     global.server = require('../index');
     done();
 });
