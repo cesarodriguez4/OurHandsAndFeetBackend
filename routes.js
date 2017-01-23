@@ -20,6 +20,6 @@ router.all('/*', authenticate, (req, res, next) => {
 });
 router.use('/user', user);
 router.use('/auth', require('./auth'));
-router.use('/bookstore', book);
+router.use('/book', book);
 
 module.exports = router;
