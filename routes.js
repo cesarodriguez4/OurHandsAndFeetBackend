@@ -2,18 +2,18 @@ const Router = require('express').Router;
 const router = new Router();
 const user  = require('./model/user/user-router');
 const book = require('./model/book/book-router');
-const authIsOn = true;
+// const authIsOn = true;
 
 function authenticate(req, res, next) {
-  if (authIsOn) {
-    if (req.headers.origin === process.env.AllowUrl) {
-      next();
-    } else {
-      res.redirect('/');
-    }
-  } else {
+  // if (authIsOn) {
+  if (req.headers.origin === process.env.AllowUrl) {
     next();
+  } else {
+    res.redirect('/');
   }
+  // } else {
+    // next();
+  // }
 
 }
 
