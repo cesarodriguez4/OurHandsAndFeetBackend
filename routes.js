@@ -2,7 +2,6 @@ const Router = require('express').Router;
 const router = new Router();
 const user  = require('./model/user/user-router');
 const book = require('./model/book/book-router');
-
 const authIsOn = true;
 
 function authenticate(req, res, next) {
