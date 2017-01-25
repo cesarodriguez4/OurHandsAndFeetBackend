@@ -3,12 +3,19 @@ const router = new Router();
 const user  = require('./model/user/user-router');
 const book = require('./model/book/book-router');
 
+const authIsOn = true;
+
 function authenticate(req, res, next) {
-  if (req.headers.origin === process.env.AllowUrl) {
-    next();
+  if (authIsOn) {
+    if (req.headers.origin === process.env.AllowUrl) {
+      next();
+    } else {
+      res.redirect('/');
+    }
   } else {
-    res.redirect('/');
+    next();
   }
+
 }
 
 

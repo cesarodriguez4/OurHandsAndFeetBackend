@@ -13,14 +13,5 @@ const bookSchema = new Schema({
   catalogNumba: { type: String, required: false }
 });
 
-bookSchema.methods = {
-  findByTitle: function(title){
-    //TODO: Figure out if findByTitle method logic should be in schema
-    let books = {};
-
-    return books;
-  }
-}
-
 
 module.exports = mongoose.model('Book', bookSchema);
