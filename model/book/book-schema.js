@@ -6,11 +6,15 @@ const bookSchema = new Schema({
   title: { type: String, required: true },
   type: { type: String, required: true },
   author: { type: String, required: false },
-  length: { type: Number, required: false },
-  year: { type: Number, required: false },
+  numberPages: { type: Number, required: false },
+  dateOfPub: { type: Number, required: false },
   url: { type: String, required: false },
-  isCheckedOut: { type: Number, required: false },
-  catalogNumba: { type: String, required: false }
+  // isCheckedOut: { type: Number, required: false },
+// isbn is either the GE number or the orderable number from a bookstore
+  isbn: { type: String, required: false },
+  siteLocation: { type: String, required: false },
+  numberOfCopies: { type: String, required: false },
+  comments: { type: String, required: false }
 });
 
 
