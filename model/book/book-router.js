@@ -7,9 +7,9 @@ const router = new Router();
 //   .get((...args) => controller.find(...args))
 //   .post((...args) => controller.create(...args));
 
-router.route('/find/:title')
-   .put((...args) => controller.update(...args))
-   .get((...args) => controller.findByTitle(...args));
+// router.route('/find/:title')
+   // .put((...args) => controller.update(...args))
+   // .get((...args) => controller.findByTitle(...args));
 //   .delete((...args) => controller.remove(...args));
 router.route('/getall')
   .get((...args) => controller.find(...args));
@@ -18,6 +18,6 @@ router.route('/')
   .post((...args) => controller.create(...args));
 
 router.route('/csv')
-  .post((...args) => controller.createCSV(...args));
+  .post((...args) => controller.createFromCSV(...args));
 
 module.exports = router;

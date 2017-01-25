@@ -1,4 +1,4 @@
-'use strict';
+
 var moment = require('moment');
 var jwt = require('jwt-simple');
 var config = require('../config');

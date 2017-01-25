@@ -10,6 +10,6 @@ const mongoose = require('mongoose');
 const mockgoose = require('mockgoose');
 
 mockgoose(mongoose).then(() => {
-    global.server = require('../index');
-    done();
+  global.server = require('../index');
+  done();
 });
