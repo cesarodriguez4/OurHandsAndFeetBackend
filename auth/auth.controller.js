@@ -1,4 +1,4 @@
-'use strict';
+
 var _ = require('lodash');
 var Entity = require('../model/user/user-schema.js');
 //var jwt = require('jwt-simple');
