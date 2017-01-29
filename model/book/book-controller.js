@@ -1,10 +1,10 @@
 const Controller = require('../../lib/controller');
 const bookModel  = require('./book-facade');
-// if (process.env.NODE_ENV === 'production') {
-//   const serverUrl = 'http://ourhandsandfeetbackend.herokuapp.com';
-// }else{
-//   const serverUrl = "http://localhost:7000";
-// }
+if (process.env.NODE_ENV === 'production') {
+  const serverUrl = 'http://ourhandsandfeetbackend.herokuapp.com';
+}else{
+  const serverUrl = "http://localhost:7000";
+}
 
 class BookController extends Controller {
   // findByTitle(req, res, next) {
@@ -30,8 +30,11 @@ class BookController extends Controller {
     csv()
     .fromStream(url)
     .on('json', (json) => {
+      router.route(serverUrl + '/',  json);
+      console.log('CSV JSON', JSON.stringify(json));
     })
 .on('done', (error) => {
+
 });
   }
   //   console.log(data);
