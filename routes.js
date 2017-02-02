@@ -6,6 +6,7 @@ const book = require('./model/book/book-router');
 
 function authenticate(req, res, next) {
   // if (authIsOn) {
+  // return next();
   if (req.headers.origin === process.env.AllowUrl) {
     next();
   } else {
@@ -14,9 +15,7 @@ function authenticate(req, res, next) {
   // } else {
     // next();
   // }
-
 }
-
 
 router.route('/').get((req, res) => {
   res.json({ message: 'Welcome to Our Hands and Feet API!' });
