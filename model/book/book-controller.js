@@ -23,17 +23,17 @@ class BookController extends Controller {
   //   return result;
   // }
 
-  createFromCSV(req, res, next) {
-    const data = req.body;
-    const url = data.url;
-    const csv = require('csvtojson');
-    csv()
-    .fromStream(url)
-    .on('json', (json) => {
-    })
-.on('done', (error) => {
-});
-  }
+//   createFromCSV(req, res, next) {
+//     const data = req.body;
+//     const url = data.url;
+//     const csv = require('csvtojson');
+//     csv()
+//     .fromStream(url)
+//     .on('json', (json) => {
+//     })
+// .on('done', (error) => {
+// });
+//   }
   //   console.log(data);
   //   console.log(url);
   //   var Converter = require('csvtojson').Converter;
