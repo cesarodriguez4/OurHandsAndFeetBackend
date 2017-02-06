@@ -22,33 +22,6 @@ class BookController extends Controller {
   //
   //   return result;
   // }
-
-//   createFromCSV(req, res, next) {
-//     const data = req.body;
-//     const url = data.url;
-//     const csv = require('csvtojson');
-//     csv()
-//     .fromStream(url)
-//     .on('json', (json) => {
-//     })
-// .on('done', (error) => {
-// });
-//   }
-  //   console.log(data);
-  //   console.log(url);
-  //   var Converter = require('csvtojson').Converter;
-  //   var converter = new Converter({ constructResult:false });
-  //   converter.on('record_parsed', (jsonOb) => {
-  //     this.model.create(jsonOb);
-  //     // .then(doc => res.status(201).json(doc))
-  //     // .catch(err => next(err));
-  //     //require('request').post(serverUrl + '/book/').form(jsonOb);
-  //   });
-  //   require('request').get(url).pipe(converter);
-  //   res.status(200);
-  //   res.send();
-  // }
-
 }
 
 module.exports = new BookController(bookModel);
