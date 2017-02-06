@@ -17,7 +17,4 @@ router.route('/getall')
 router.route('/')
   .post((...args) => controller.create(...args));
 
-router.route('/csv')
-  .post((...args) => controller.createFromCSV(...args));
-
 module.exports = router;
