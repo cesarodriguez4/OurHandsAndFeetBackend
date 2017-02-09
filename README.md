@@ -4,7 +4,6 @@
 #Install
 - npm install
 - Request a copy of the .env file, which includes credentials to development mLab and to connect to the Google Auth Service<br><br>
-<i>Note</i> there is an <b>example.env</b> file for you to use. Copy it, paste it as <b>.env</b>, then request the missing credentials from Josh Sherman.
 
 #Run the server
 <b>npm start</b> starts the express server at localhost:7000<br>
@@ -12,8 +11,8 @@
 <b>npm run debug</b> also starts the node debugger, which allows you to use Chrome browser to debug. You should also install the NIM add-on to Chrome and set it to automatic mode.
 
 #Authorization
-The .env contains a variable that points to the localhost of the front end.
-change this to be either the development or production server port for locahhost, depending on which on your are running.
+The .env contains a variable that points to the localhost of the front end.<br>
+Change this to be either the development (9000) or production (8080) server port.
 
 #test
 <b>npm test</b><br>
