@@ -1,6 +1,5 @@
 const User1 = require('../../model/user/user-schema');
 const Controller = require('../../lib/controller');
-var user_bd = {};
 
 mockgoose(mongoose).then(() => {
   global.server = require('../../index');
