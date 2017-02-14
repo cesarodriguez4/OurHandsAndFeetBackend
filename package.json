@@ -10,6 +10,7 @@
   "scripts": {
     "dev": "nodemon index.js",
     "start": "node index.js",
+    "cleaninstall": "rm -rf node_modules && npm cache clean && npm install",
     "debug": "node --inspect --debug-brk index.js",
     "mocha": "mocha  -r ./test/bootstrap.js test/**/*.js",
     "nyc": "nyc npm run mocha",
