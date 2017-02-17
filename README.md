@@ -1,6 +1,7 @@
 # Our Hands And Feet Back end
 [![CircleCI](https://circleci.com/gh/UltimatePromotions/OurHandsAndFeetBackend.svg?style=svg)](https://circleci.com/gh/UltimatePromotions/OurHandsAndFeetBackend)
 
+
 <h3>Install</h3>
 - npm install
 - Request a copy of the .env file, which includes credentials to development mLab and to connect to the Google Auth Service
@@ -10,6 +11,7 @@
 <b>npm start</b> starts the express server at localhost:7000<br>
 <br>
 <b>npm run debug</b> also starts the node debugger, which allows you to use Chrome browser to debug. You should also install the NIM add-on to Chrome and set it to automatic mode.
+
 
 <h3>Authorization</h3>
 The .env contains a variable that points to the localhost of the front end and other required credentials.<br>
