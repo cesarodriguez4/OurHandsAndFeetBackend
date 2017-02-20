@@ -1,4 +1,5 @@
 const User1 = require('../../model/user/user-schema');
+
 const Controller = require('../../lib/controller');
 
 mockgoose(mongoose).then(() => {
@@ -24,6 +25,7 @@ it('should create a new user', (done) => {
     done();
   });
 });
+
 
 it('should not update a user', (done) => {
   const User = new User1();
@@ -69,7 +71,7 @@ it('should find a user by id', (done) => {
       expect(res).to.have.status(200);
       done();
     });
-}); 
+});
 
 it('should NOT find a user by id', (done) => {
   const User = new User1();
@@ -82,6 +84,7 @@ it('should NOT find a user by id', (done) => {
       done();
   });
 });
+
 
 it('should throw an error in update()', (done) => {
   const User = new User1();
@@ -106,4 +109,5 @@ it('should throw an error in findById()', (done) => {
       done();
     });
 });
+
 
