@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 const Model = require('../../lib/facade');
 const userSchema  = require('./user-schema');
 

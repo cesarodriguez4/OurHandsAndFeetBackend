@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 
 const Book1 = require('../../model/book/book-schema');
 mockgoose(mongoose).then(() => {
@@ -7,7 +8,6 @@ mockgoose(mongoose).then(() => {
 
 describe('The library feature',  () => {
   beforeEach((done) => {
-
     Book1.collection.drop();
     Book1.ensureIndexes(() => {
       done();

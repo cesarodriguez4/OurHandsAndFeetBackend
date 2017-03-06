@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 const controller = require('./book-controller');
 const Router = require('express').Router;
 const router = new Router();

@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 const User1 = require('../../model/user/user-schema');
 const Controller = require('../../lib/controller');
 
@@ -69,7 +70,7 @@ it('should find a user by id', (done) => {
       expect(res).to.have.status(200);
       done();
     });
-}); 
+});
 
 it('should NOT find a user by id', (done) => {
   const User = new User1();
@@ -81,4 +82,22 @@ it('should NOT find a user by id', (done) => {
       expect(res).to.have.status(404);
       done();
   });
+});
+
+
+it('should modify a user', (done) => {
+  const User = new User1();
+  User.name = 'foo';
+  User.email = 'foo2@bar.com';
+  User.save();
+  chai.request(server)
+        .put('/user/' + User.id)
+        .set({ origin: process.env.AllowUrl })
+        .send({ userType: 'foobar' })
+        .end((err, res) => {
+          expect(res).to.have.status(200);
+          expect(res.nModified > 0);
+          // TODO: Write a GET request to verify that user's name has been changed
+          done();
+        });
 });

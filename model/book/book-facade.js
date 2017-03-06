@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 const Model = require('../../lib/facade');
 const bookSchema  = require('./book-schema');
 

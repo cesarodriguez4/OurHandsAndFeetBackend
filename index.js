@@ -1,4 +1,4 @@
-
+/*jshint esversion: 6 */
 const express    = require('express');
 const mongoose   = require('mongoose');
 const helmet     = require('helmet');

@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 const Controller = require('../../lib/controller');
 const bookModel  = require('./book-facade');
 // if (process.env.NODE_ENV === 'production') {

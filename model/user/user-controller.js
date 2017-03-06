@@ -1,6 +1,6 @@
+/*jshint esversion: 6 */
 const Controller = require('../../lib/controller');
 const userModel  = require('./user-facade');
-
 
 class UserController extends Controller {}
 
